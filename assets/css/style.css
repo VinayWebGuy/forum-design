@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  font-family: "Nunito sans", sans-serif;
+}
+body::-webkit-scrollbar {
+  width: 5px;
+}
+body::-webkit-scrollbar-track {
+  background: #0e0c0c;
+  opacity: 0.7;
+}
+body::-webkit-scrollbar-thumb {
+  background: #d22e22;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.mark {
+  position: relative;
+  color: #d22e22;
+}
+.mark::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 55%;
+  right: 0;
+  height: 5px;
+  background-color: #d22e22;
+  -webkit-clip-path: polygon(51% 33%, 100% 1%, 100% 100%, 70% 100%, 26% 100%, 0 100%, 0 60%);
+          clip-path: polygon(51% 33%, 100% 1%, 100% 100%, 70% 100%, 26% 100%, 0 100%, 0 60%);
+}
+
+.btn {
+  padding: 7px 15px;
+  border: none;
+  font-weight: 600;
+  font-family: "Inter tight", sans-serif;
+  border-radius: 20px;
+  border: 1px solid #d22e22;
+}
+.btn.default-btn {
+  background-color: #d22e22;
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s;
+  color: #e8e8e8;
+}
+.btn.default-btn:hover {
+  box-shadow: none;
+}
+.btn.outline-btn {
+  background-color: transparent;
+  color: #d22e22;
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s;
+}
+.btn.outline-btn:hover {
+  box-shadow: none;
+}
+
+nav {
+  height: 80px;
+  display: flex;
+  padding: 0 60px;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  position: -webkit-sticky;
+  position: sticky;
+  background-color: #fff;
+  z-index: 999;
+  top: 0;
+}
+nav .logo {
+  font-size: 2.1rem;
+  font-family: "Inter tight", sans-serif;
+  font-weight: 700;
+  color: #d22e22;
+}
+nav .menu {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+  align-items: center;
+}
+nav .menu li {
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+nav .menu li:hover:not(.btn) {
+  color: #d22e22;
+}
+
+.hero {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  color: #0e0c0c;
+  padding: 0 60px;
+}
+.hero h3 {
+  font-size: 1.7rem;
+  font-family: "Inter tight", sans-serif;
+}
+.hero h2 {
+  font-size: 2.7rem;
+  font-family: "Inter tight", sans-serif;
+  margin: 15px 0;
+  position: relative;
+}
+.hero p {
+  width: 600px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+.hero .buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 40px;
+  font-size: 1.2rem;
+}
+
+.who-we-are {
+  min-height: calc(100vh - 80px);
+  padding: 30px 60px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+.who-we-are h2 {
+  font-family: "Inter tight", sans-serif;
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+}
+.who-we-are p {
+  margin: 10px 0;
+  font-size: 1rem;
+  text-align: justify;
+}
+.who-we-are .btn {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.how-we-work {
+  min-height: calc(100vh - 80px);
+  padding: 30px 60px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+.how-we-work h2 {
+  font-family: "Inter tight", sans-serif;
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+}
+.how-we-work p {
+  margin: 10px 0;
+  font-size: 1rem;
+  text-align: justify;
+}
+.how-we-work p.step {
+  font-size: 1.1rem;
+}
+.how-we-work p.step span {
+  font-weight: 800;
+  text-transform: uppercase;
+}/*# sourceMappingURL=style.css.map */
