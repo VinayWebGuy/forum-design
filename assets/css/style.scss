@@ -7,6 +7,7 @@ $font1: "Inter tight", sans-serif;
 $font2: "Nunito sans", sans-serif;
 $headerHeight: 80px;
 $restHeight: calc(100vh - $headerHeight);
+$restHeight2: calc(100vh - $headerHeight - 40px);
 
 * {
   margin: 0;
@@ -63,6 +64,28 @@ ul {
     );
   }
 }
+.mark2 {
+  position: relative;
+  color: #000;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 30%;
+    left: 0;
+    height: 3px;
+    background-color: #000;
+    clip-path: polygon(
+      26% 100%,
+      0 100%,
+      0 60%,
+      51% 33%,
+      100% 1%,
+      100% 100%,
+      70% 100%
+    );
+  }
+}
 .btn {
   padding: 7px 15px;
   border: none;
@@ -70,6 +93,7 @@ ul {
   font-family: $font1;
   border-radius: 20px;
   border: 1px solid $color;
+  cursor: pointer;
   &.default-btn {
     background-color: $color;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.5);
@@ -84,6 +108,16 @@ ul {
     color: $color;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.5);
     transition: box-shadow 0.3s;
+    &:hover {
+      box-shadow: none;
+    }
+  }
+  &.secondary-btn {
+    background-color: #fff;
+    color: $color;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s;
+    border: 1px solid #fff;
     &:hover {
       box-shadow: none;
     }
@@ -117,6 +151,11 @@ nav {
       font-weight: 500;
       font-size: 1rem;
       text-transform: uppercase;
+
+      &.active {
+        color: $color;
+        font-weight: 800;
+      }
 
       &:hover:not(.btn) {
         color: $color;
@@ -163,20 +202,26 @@ nav {
   gap: 40px;
   align-items: center;
 
-  h2 {
-    font-family: $font1;
-    font-size: 2.4rem;
-    margin-bottom: 30px;
+  img {
+    width: 500px;
   }
-  p {
-    margin: 10px 0;
-    font-size: 1rem;
-    text-align: justify;
-  }
+  .content {
+    float: 1;
+    h2 {
+      font-family: $font1;
+      font-size: 2.4rem;
+      margin-bottom: 30px;
+    }
+    p {
+      margin: 10px 0;
+      font-size: 1rem;
+      text-align: justify;
+    }
 
-  .btn {
-    display: inline-block;
-    margin-top: 10px;
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+    }
   }
 }
 .how-we-work {
@@ -185,21 +230,215 @@ nav {
   display: flex;
   gap: 40px;
   align-items: center;
-  h2 {
-    font-family: $font1;
+  img {
+    width: 500px;
+  }
+  .content {
+    flex: 1;
+    h2 {
+      font-family: $font1;
+      font-size: 2.4rem;
+      margin-bottom: 30px;
+    }
+    .steps {
+      display: flex;
+      flex-direction: column;
+
+      .step {
+        font-size: 1.3rem;
+        position: relative;
+        margin: 25px 0;
+        font-family: $font1;
+        padding-left: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        i {
+          color: $color;
+          transition: 0.3s linear;
+          position: absolute;
+          right: 30px;
+        }
+        span {
+          font-size: 4.5rem;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          color: $color;
+          opacity: 0;
+          transition: opacity 0.3s;
+        }
+
+        &:hover {
+          i {
+            right: 0;
+          }
+          span {
+            opacity: 0.4;
+          }
+        }
+      }
+    }
+  }
+}
+
+.rules {
+  min-height: $restHeight;
+  padding: 30px 60px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+
+  img {
+    width: 500px;
+  }
+  .content {
+    flex: 1;
+
+    h2 {
+      font-family: $font1;
+      font-size: 2.4rem;
+      margin-bottom: 30px;
+    }
+
+    .all-rules {
+      line-height: 28px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+footer {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $mainColor;
+  font-weight: 600;
+}
+
+section {
+  min-height: $restHeight;
+  padding: 30px 60px;
+
+  > h2 {
+    text-align: center;
     font-size: 2.4rem;
     margin-bottom: 30px;
   }
-  p {
-    margin: 10px 0;
-    font-size: 1rem;
-    text-align: justify;
-    &.step {
+  .section-info {
+    display: flex;
+    gap: 40px;
+
+    img {
+      width: 500px;
+    }
+    p {
+      margin-bottom: 20px;
+    }
+    h2 {
+      margin-bottom: 8px;
+    }
+  }
+}
+.all-faqs {
+  .single-faq {
+    height: 40px;
+    overflow: hidden;
+    margin: 20px 0;
+    transition: height 0.3s;
+
+    &.open {
+      height: auto;
+    }
+
+    .faq-ques {
+      height: 40px;
+      background-color: $color;
+      color: #fff;
+      display: flex;
       font-size: 1.1rem;
+      align-items: center;
+      padding: 0 15px;
+      justify-content: space-between;
+      cursor: pointer;
+
       span {
-        font-weight: 800;
-        text-transform: uppercase;
+        font-size: 1.4rem;
       }
     }
+    .faq-ans {
+      padding: 15px;
+      border: 1px solid $textColor;
+      border-top: none;
+    }
+  }
+}
+
+.auth-box {
+  min-height: $restHeight2;
+  padding: 30px 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  form {
+    width: 400px;
+    min-height: 200px;
+    background-color: $color;
+    padding: 30px 35px;
+    color: #fff;
+    border-radius: 50px;
+    filter: drop-shadow(5px 7px 5px $color);
+
+    h2 {
+      text-emphasis: ce;
+      font-family: $font1;
+      margin-bottom: 20px;
+    }
+    .formGroup {
+      width: 100%;
+      border: 1px solid #fff;
+      padding: 20px 10px;
+      margin-bottom: 18px;
+      position: relative;
+
+      label {
+        position: absolute;
+        pointer-events: none;
+        left: 10px;
+        top: 50%;
+        transition: 0.15s linear;
+        transform: translateY(-50%);
+      }
+      input {
+        width: 100%;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        color: #fff;
+        font-size: 1rem;
+        &:focus,
+        &:valid {
+          & + label {
+            top: 15px;
+            font-size: 0.8rem;
+          }
+        }
+      }
+      i {
+        position: absolute;
+        right: 2%;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+    }
+  }
+  .links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
   }
 }

@@ -48,6 +48,22 @@ ul {
           clip-path: polygon(51% 33%, 100% 1%, 100% 100%, 70% 100%, 26% 100%, 0 100%, 0 60%);
 }
 
+.mark2 {
+  position: relative;
+  color: #000;
+}
+.mark2::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 30%;
+  left: 0;
+  height: 3px;
+  background-color: #000;
+  -webkit-clip-path: polygon(26% 100%, 0 100%, 0 60%, 51% 33%, 100% 1%, 100% 100%, 70% 100%);
+          clip-path: polygon(26% 100%, 0 100%, 0 60%, 51% 33%, 100% 1%, 100% 100%, 70% 100%);
+}
+
 .btn {
   padding: 7px 15px;
   border: none;
@@ -55,6 +71,7 @@ ul {
   font-family: "Inter tight", sans-serif;
   border-radius: 20px;
   border: 1px solid #d22e22;
+  cursor: pointer;
 }
 .btn.default-btn {
   background-color: #d22e22;
@@ -72,6 +89,16 @@ ul {
   transition: box-shadow 0.3s;
 }
 .btn.outline-btn:hover {
+  box-shadow: none;
+}
+.btn.secondary-btn {
+  background-color: #fff;
+  color: #d22e22;
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s;
+  border: 1px solid #fff;
+}
+.btn.secondary-btn:hover {
   box-shadow: none;
 }
 
@@ -104,6 +131,10 @@ nav .menu li {
   font-weight: 500;
   font-size: 1rem;
   text-transform: uppercase;
+}
+nav .menu li.active {
+  color: #d22e22;
+  font-weight: 800;
 }
 nav .menu li:hover:not(.btn) {
   color: #d22e22;
@@ -148,17 +179,23 @@ nav .menu li:hover:not(.btn) {
   gap: 40px;
   align-items: center;
 }
-.who-we-are h2 {
+.who-we-are img {
+  width: 500px;
+}
+.who-we-are .content {
+  float: 1;
+}
+.who-we-are .content h2 {
   font-family: "Inter tight", sans-serif;
   font-size: 2.4rem;
   margin-bottom: 30px;
 }
-.who-we-are p {
+.who-we-are .content p {
   margin: 10px 0;
   font-size: 1rem;
   text-align: justify;
 }
-.who-we-are .btn {
+.who-we-are .content .btn {
   display: inline-block;
   margin-top: 10px;
 }
@@ -170,20 +207,195 @@ nav .menu li:hover:not(.btn) {
   gap: 40px;
   align-items: center;
 }
-.how-we-work h2 {
+.how-we-work img {
+  width: 500px;
+}
+.how-we-work .content {
+  flex: 1;
+}
+.how-we-work .content h2 {
   font-family: "Inter tight", sans-serif;
   font-size: 2.4rem;
   margin-bottom: 30px;
 }
-.how-we-work p {
-  margin: 10px 0;
-  font-size: 1rem;
-  text-align: justify;
+.how-we-work .content .steps {
+  display: flex;
+  flex-direction: column;
 }
-.how-we-work p.step {
+.how-we-work .content .steps .step {
+  font-size: 1.3rem;
+  position: relative;
+  margin: 25px 0;
+  font-family: "Inter tight", sans-serif;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.how-we-work .content .steps .step i {
+  color: #d22e22;
+  transition: 0.3s linear;
+  position: absolute;
+  right: 30px;
+}
+.how-we-work .content .steps .step span {
+  font-size: 4.5rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #d22e22;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.how-we-work .content .steps .step:hover i {
+  right: 0;
+}
+.how-we-work .content .steps .step:hover span {
+  opacity: 0.4;
+}
+
+.rules {
+  min-height: calc(100vh - 80px);
+  padding: 30px 60px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+.rules img {
+  width: 500px;
+}
+.rules .content {
+  flex: 1;
+}
+.rules .content h2 {
+  font-family: "Inter tight", sans-serif;
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+}
+.rules .content .all-rules {
+  line-height: 28px;
+  margin-bottom: 10px;
+}
+
+footer {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e8e8e8;
+  font-weight: 600;
+}
+
+section {
+  min-height: calc(100vh - 80px);
+  padding: 30px 60px;
+}
+section > h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+}
+section .section-info {
+  display: flex;
+  gap: 40px;
+}
+section .section-info img {
+  width: 500px;
+}
+section .section-info p {
+  margin-bottom: 20px;
+}
+section .section-info h2 {
+  margin-bottom: 8px;
+}
+
+.all-faqs .single-faq {
+  height: 40px;
+  overflow: hidden;
+  margin: 20px 0;
+  transition: height 0.3s;
+}
+.all-faqs .single-faq.open {
+  height: auto;
+}
+.all-faqs .single-faq .faq-ques {
+  height: 40px;
+  background-color: #d22e22;
+  color: #fff;
+  display: flex;
   font-size: 1.1rem;
+  align-items: center;
+  padding: 0 15px;
+  justify-content: space-between;
+  cursor: pointer;
 }
-.how-we-work p.step span {
-  font-weight: 800;
-  text-transform: uppercase;
+.all-faqs .single-faq .faq-ques span {
+  font-size: 1.4rem;
+}
+.all-faqs .single-faq .faq-ans {
+  padding: 15px;
+  border: 1px solid #0e0c0c;
+  border-top: none;
+}
+
+.auth-box {
+  min-height: calc(100vh - 80px - 40px);
+  padding: 30px 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.auth-box form {
+  width: 400px;
+  min-height: 200px;
+  background-color: #d22e22;
+  padding: 30px 35px;
+  color: #fff;
+  border-radius: 50px;
+  filter: drop-shadow(5px 7px 5px #d22e22);
+}
+.auth-box form h2 {
+  -webkit-text-emphasis: ce;
+          text-emphasis: ce;
+  font-family: "Inter tight", sans-serif;
+  margin-bottom: 20px;
+}
+.auth-box form .formGroup {
+  width: 100%;
+  border: 1px solid #fff;
+  padding: 20px 10px;
+  margin-bottom: 18px;
+  position: relative;
+}
+.auth-box form .formGroup label {
+  position: absolute;
+  pointer-events: none;
+  left: 10px;
+  top: 50%;
+  transition: 0.15s linear;
+  transform: translateY(-50%);
+}
+.auth-box form .formGroup input {
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 1rem;
+}
+.auth-box form .formGroup input:focus + label, .auth-box form .formGroup input:valid + label {
+  top: 15px;
+  font-size: 0.8rem;
+}
+.auth-box form .formGroup i {
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.auth-box .links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
 }/*# sourceMappingURL=style.css.map */
