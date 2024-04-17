@@ -193,6 +193,7 @@ nav .right .icons-section .loggedin-user:hover {
 }
 .main .sidebar {
   width: 250px;
+  overflow: hidden;
   padding: 20px 30px;
   border-right: 1px solid #ccc;
   display: flex;
@@ -349,7 +350,6 @@ nav .right .icons-section .loggedin-user:hover {
 }
 .all-activity .single-activity .work span {
   text-align: right;
-  font-weight: 500;
   font-weight: 700;
 }
 .all-activity .single-activity::before {

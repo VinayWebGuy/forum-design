@@ -25,3 +25,12 @@ $(document).ready(function () {
 $('.view-noti').click(function () {
     $('.all-notifications').toggleClass('open')
 })
+
+
+$('.menu-bar').click(function () {
+    $('.menu').addClass('open')
+    $('.close-bar').addClass('open')
+})
+$('.close-bar').click(function () {
+    $('.menu').removeClass('open')
+})

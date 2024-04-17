@@ -133,6 +133,10 @@ nav {
   background-color: #fff;
   z-index: 999;
   top: 0;
+  .menu-bar,
+  .close-bar {
+    display: none;
+  }
 
   .logo {
     font-size: 2.1rem;
@@ -181,6 +185,7 @@ nav {
     font-size: 2.7rem;
     font-family: $font1;
     margin: 15px 0;
+    text-align: center;
     position: relative;
   }
   p {

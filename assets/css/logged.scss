@@ -211,6 +211,7 @@ nav {
 
   .sidebar {
     width: $sideWidth;
+    overflow: hidden;
     padding: 20px 30px;
     border-right: 1px solid #ccc;
     display: flex;
@@ -377,7 +378,6 @@ nav {
       gap: 8px;
       span {
         text-align: right;
-        font-weight: 500;
         font-weight: 700;
       }
     }
