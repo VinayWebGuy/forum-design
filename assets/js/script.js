@@ -19,3 +19,9 @@ $(document).ready(function () {
         }
     });
 });
+
+
+
+$('.view-noti').click(function () {
+    $('.all-notifications').toggleClass('open')
+})
