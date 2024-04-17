@@ -58,10 +58,10 @@
         <div class="sidebar">
             <div class="menus">
                 <h3>Main</h3>
-                <a class="active" href="/logged"><i class="fa fa-home"></i> Home</a>
+                <a href="/logged"><i class="fa fa-home"></i> Home</a>
                 <a href="activity.html"><i class="fa fa-chart-line"></i> Activity</a>
                 <h3>Forum</h3>
-                <a href="top-tags.html"><i class="fa fa-tag"></i>Top Tags</a>
+                <a class="active" href="top-tags.html"><i class="fa fa-tag"></i>Top Tags</a>
                 <a href="top-queries.html"><i class="fa fa-list"></i>Top Queries</a>
                 <h3>Account</h3>
                 <a href="account.html"><i class="fa fa-cog"></i> Account</a>
@@ -76,79 +76,57 @@
 
         <div class="content">
             <div class="page-info">
-                <h3>Home</h3>
+                <h3>Top tags</h3>
 
                 <div class="page-map">
                     <span>ae</span>
                     <i class="fa fa-chevron-right"></i>
-                    <span>Home</span>
+                    <span>Top tags</span>
                 </div>
             </div>
 
-
-            <form class="query-form">
-                <div class="ask-query">
-                    <input type="text" name="title" id="title" placeholder="Title">
-                    <textarea name="query" id="query" placeholder="Your query"></textarea>
+            <div class="top-tags">
+                <div class="single-tag">
+                    <a href="#">Development</a>
+                    <span class="questions">693 questions</span>
                 </div>
-                <div class="buttons">
-                    <button class="btn outline-btn">Save to Draft</button>
-                    <button class="btn default-btn">Publish</button>
-
+                <div class="single-tag">
+                    <a href="#">MERN Stack</a>
+                    <span class="questions">591 questions</span>
                 </div>
-            </form>
-
-            <div class="recent-queries">
-                <div class="head">
-                    <h4>Recent queries</h4>
-
-                    <select name="recent_type" id="recent_type">
-                        <option value="all">Show all</option>
-                        <option value="mine">Show mine</option>
-                    </select>
+                <div class="single-tag">
+                    <a href="#">Mysql</a>
+                    <span class="questions">553 questions</span>
                 </div>
-
-                <div class="all-queries">
-                    <div class="single-query">
-                        <div class="query-vote">
-                            <i class="fa fa-chevron-up active"></i>
-                            <span class="vote">6</span>
-                            <i class="fa fa-chevron-down"></i>
-                        </div>
-                        <a href="#" class="query-details">
-                            <div class="query-title">How to install Microsoft office 2016 in windows 10</div>
-                            <div class="query-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas
-                                veritatis asperiores aliquam natus odio ipsam?..........</div>
-                        </a>
-                    </div>
-                    <div class="single-query">
-                        <div class="query-vote">
-                            <i class="fa fa-chevron-up"></i>
-                            <span class="vote">-3</span>
-                            <i class="fa fa-chevron-down active"></i>
-                        </div>
-                        <a href="#" class="query-details">
-                            <div class="query-title">How to install Microsoft office 2016 in windows 10</div>
-                            <div class="query-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas
-                                veritatis asperiores aliquam natus odio ipsam?..........</div>
-                        </a>
-                    </div>
-                    <div class="single-query">
-                        <div class="query-vote">
-                            <i class="fa fa-chevron-up"></i>
-                            <span class="vote">3</span>
-                            <i class="fa fa-chevron-down"></i>
-                        </div>
-                        <a href="#" class="query-details">
-                            <div class="query-title">How to install Microsoft office 2016 in windows 10</div>
-                            <div class="query-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas
-                                veritatis asperiores aliquam natus odio ipsam?..........</div>
-                        </a>
-                    </div>
+                <div class="single-tag">
+                    <a href="#">Database</a>
+                    <span class="questions">499 questions</span>
+                </div>
+                <div class="single-tag">
+                    <a href="#">Server</a>
+                    <span class="questions">498 questions</span>
+                </div>
+                <div class="single-tag">
+                    <a href="#">React js</a>
+                    <span class="questions">411 questions</span>
+                </div>
+                <div class="single-tag">
+                    <a href="#">Javascript</a>
+                    <span class="questions">404 questions</span>
+                </div>
+                <div class="single-tag">
+                    <a href="#">Python</a>
+                    <span class="questions">314 questions</span>
+                </div>
+                <div class="single-tag">
+                    <a href="#">Node</a>
+                    <span class="questions">296 questions</span>
+                </div>
+                <div class="single-tag">
+                    <a href="#">Mongo DB</a>
+                    <span class="questions">211 questions</span>
                 </div>
             </div>
-
-
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"

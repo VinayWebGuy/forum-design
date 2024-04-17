@@ -89,6 +89,8 @@ nav {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
+  background-color: #fff;
+  z-index: 99;
 
   .left {
     width: $sideWidth;
@@ -237,6 +239,11 @@ nav {
         &:hover {
           color: $color;
         }
+
+        &.active {
+          font-weight: 800;
+          color: $color;
+        }
       }
     }
     .btn {
@@ -247,8 +254,349 @@ nav {
     }
   }
   .content {
-    padding: 0 60px;
+    padding: 20px 60px;
     flex: 1;
-    min-height: 200vh;
+
+    .page-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .page-map {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+  }
+}
+
+// Home Page
+.query-form {
+  .ask-query {
+    margin-top: 25px;
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid $textColor;
+      outline: none;
+      font-family: $font2;
+    }
+    textarea {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      resize: none;
+      border: 1px solid $textColor;
+      outline: none;
+      padding: 10px;
+      font-family: $font2;
+    }
+  }
+  .buttons {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+  }
+}
+.recent-queries {
+  margin-top: 40px;
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h4 {
+      font-size: 1.3rem;
+    }
+
+    select {
+      padding: 5px 7px;
+      font-family: $font2;
+    }
+  }
+
+  .all-queries {
+    margin-top: 10px;
+  }
+}
+
+.single-query {
+  padding: 10px;
+  display: flex;
+  gap: 45px;
+  align-items: center;
+  margin: 15px 0;
+  .query-vote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    i {
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: rgb(156, 156, 156);
+      font-weight: 800;
+
+      &.active {
+        color: $color;
+      }
+    }
+    .vote {
+      font-size: 1.2rem;
+    }
+  }
+  .query-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  &:hover {
+    background-color: $mainColor;
+  }
+}
+
+.all-activity {
+  margin-top: 25px;
+  .single-activity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    font-family: $font2;
+    padding: 30px 0;
+    margin-left: 60px;
+    .time {
+      font-weight: 300;
+    }
+    .work {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex: 1;
+      gap: 8px;
+      span {
+        text-align: right;
+        font-weight: 500;
+        font-weight: 700;
+      }
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 2px;
+      height: 100%;
+      background-color: #ddd;
+      left: -40px;
+      transform: translateX(-50%);
+      transition: background-color 0.3s;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #555;
+      left: -40px;
+      transform: translateX(-50%);
+    }
+    &:hover::after {
+      background-color: $color;
+    }
+    &:hover span {
+      color: $color;
+    }
+  }
+}
+
+.top-tags {
+  margin-top: 25px;
+
+  .single-tag {
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      background-color: $color;
+      padding: 5px 10px;
+      cursor: pointer;
+      color: #fff;
+      border-radius: 7px;
+
+      &:hover {
+        & + span {
+          color: $color;
+          font-weight: 800;
+        }
+      }
+    }
+  }
+}
+
+.top-queries {
+  margin-top: 25px;
+}
+
+.subscription {
+  margin-top: 25px;
+
+  .all-plans {
+    display: flex;
+    justify-content: space-between;
+    gap: 45px;
+
+    .single-plan {
+      border: 1px solid $color;
+      padding: 10px 15px;
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 5px 5px 7px $color;
+      .plan-name {
+        margin-bottom: 15px;
+        color: $color;
+        font-family: $font1;
+        font-weight: 700;
+        font-size: 1.4rem;
+      }
+      .plan-features {
+        margin-top: 20px;
+        p {
+          display: flex;
+          justify-content: space-between;
+          margin: 10px 0;
+          font-weight: 600;
+          font-size: 1.1rem;
+
+          .fa-check {
+            color: green;
+          }
+          .fa-times {
+            color: red;
+          }
+        }
+      }
+      button {
+        margin-top: 20px;
+        width: 100%;
+      }
+
+      &.current {
+        background: $color;
+        color: #fff;
+        .plan-name {
+          color: #fff;
+        }
+
+        .plan-features {
+          margin-top: 20px;
+          p {
+            .fa-check,
+            .fa-times {
+              color: #fff;
+            }
+          }
+        }
+        button {
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}
+
+.my-queries {
+  margin-top: 25px;
+}
+
+.account {
+  margin-top: 25px;
+  h3 {
+    margin-bottom: 15px;
+  }
+
+  .settings {
+    margin-top: 20px;
+    .groups {
+      display: flex;
+      gap: 20px;
+
+      .formGroup2 {
+        width: 100%;
+
+        select {
+          width: 100%;
+          padding: 7px 12px;
+        }
+      }
+    }
+    button {
+      margin-top: 15px;
+    }
+  }
+}
+
+.formGroup {
+  width: 100%;
+  border: 1px solid $textColor;
+  padding: 20px 10px;
+  margin-bottom: 18px;
+  position: relative;
+
+  label {
+    position: absolute;
+    pointer-events: none;
+    left: 10px;
+    top: 50%;
+    transition: 0.15s linear;
+    transform: translateY(-50%);
+  }
+  input {
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: $textColor;
+    font-size: 1rem;
+    &:focus,
+    &:valid {
+      & + label {
+        top: 15px;
+        font-size: 0.8rem;
+      }
+    }
+  }
+  i {
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+}
+.my-responses {
+  margin-top: 25px;
+  .single-response {
+    position: relative;
+    margin-bottom: 20px;
+    .single-query {
+      &:hover {
+        background-color: transparent;
+
+        & + .my-response {
+          background-color: $mainColor;
+        }
+      }
+    }
+    .my-response {
+      padding: 10px 0 10px 120px;
+      margin-top: -20px;
+
+      i {
+        rotate: 180deg;
+      }
+    }
   }
 }

@@ -58,13 +58,13 @@
         <div class="sidebar">
             <div class="menus">
                 <h3>Main</h3>
-                <a class="active" href="/logged"><i class="fa fa-home"></i> Home</a>
+                <a href="/logged"><i class="fa fa-home"></i> Home</a>
                 <a href="activity.html"><i class="fa fa-chart-line"></i> Activity</a>
                 <h3>Forum</h3>
                 <a href="top-tags.html"><i class="fa fa-tag"></i>Top Tags</a>
                 <a href="top-queries.html"><i class="fa fa-list"></i>Top Queries</a>
                 <h3>Account</h3>
-                <a href="account.html"><i class="fa fa-cog"></i> Account</a>
+                <a class="active" href="account.html"><i class="fa fa-cog"></i> Account</a>
                 <a href="subscription.html"><i class="fa fa-file-invoice"></i> Subscription</a>
                 <a href="my-queries.html"><i class="fa fa-question"></i> My Queries</a>
                 <a href="my-responses.html"><i class="fa fa-star"></i> My Responses</a>
@@ -76,77 +76,58 @@
 
         <div class="content">
             <div class="page-info">
-                <h3>Home</h3>
+                <h3>Account</h3>
 
                 <div class="page-map">
                     <span>ae</span>
                     <i class="fa fa-chevron-right"></i>
-                    <span>Home</span>
+                    <span>Account</span>
                 </div>
             </div>
 
 
-            <form class="query-form">
-                <div class="ask-query">
-                    <input type="text" name="title" id="title" placeholder="Title">
-                    <textarea name="query" id="query" placeholder="Your query"></textarea>
-                </div>
-                <div class="buttons">
-                    <button class="btn outline-btn">Save to Draft</button>
-                    <button class="btn default-btn">Publish</button>
+            <div class="account">
 
-                </div>
-            </form>
-
-            <div class="recent-queries">
-                <div class="head">
-                    <h4>Recent queries</h4>
-
-                    <select name="recent_type" id="recent_type">
-                        <option value="all">Show all</option>
-                        <option value="mine">Show mine</option>
-                    </select>
-                </div>
-
-                <div class="all-queries">
-                    <div class="single-query">
-                        <div class="query-vote">
-                            <i class="fa fa-chevron-up active"></i>
-                            <span class="vote">6</span>
-                            <i class="fa fa-chevron-down"></i>
-                        </div>
-                        <a href="#" class="query-details">
-                            <div class="query-title">How to install Microsoft office 2016 in windows 10</div>
-                            <div class="query-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas
-                                veritatis asperiores aliquam natus odio ipsam?..........</div>
-                        </a>
+                <form action="">
+                    <h3>Change Password</h3>
+                    <div class="formGroup">
+                        <input type="password" name="old_password" id="old_password" required>
+                        <label for="old_password">Old Password</label>
                     </div>
-                    <div class="single-query">
-                        <div class="query-vote">
-                            <i class="fa fa-chevron-up"></i>
-                            <span class="vote">-3</span>
-                            <i class="fa fa-chevron-down active"></i>
-                        </div>
-                        <a href="#" class="query-details">
-                            <div class="query-title">How to install Microsoft office 2016 in windows 10</div>
-                            <div class="query-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas
-                                veritatis asperiores aliquam natus odio ipsam?..........</div>
-                        </a>
+                    <div class="formGroup">
+                        <input type="password" name="new_password" id="new_password" required>
+                        <label for="new_password">New Password</label>
                     </div>
-                    <div class="single-query">
-                        <div class="query-vote">
-                            <i class="fa fa-chevron-up"></i>
-                            <span class="vote">3</span>
-                            <i class="fa fa-chevron-down"></i>
-                        </div>
-                        <a href="#" class="query-details">
-                            <div class="query-title">How to install Microsoft office 2016 in windows 10</div>
-                            <div class="query-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas
-                                veritatis asperiores aliquam natus odio ipsam?..........</div>
-                        </a>
+                    <div class="formGroup">
+                        <input type="password" name="confirm_password" id="confirm_password" required>
+                        <label for="confirm_password">Confirm Password</label>
                     </div>
-                </div>
+                    <button class="btn default-btn">Change</button>
+                </form>
+
+
+                <form class="settings">
+                    <h3>Settings</h3>
+                    <div class="groups">
+                        <div class="formGroup2">
+                            <label for="account_privacy">Account Privacy</label>
+                            <select name="account_privacy" id="account_privacy">
+                                <option value="public">Public</option>
+                                <option value="private">Private</option>
+                            </select>
+                        </div>
+                        <div class="formGroup2">
+                            <label for="account_privacy">Enable Notifications</label>
+                            <select name="notifications" id="notifications">
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn default-btn">Update</button>
+                </form>
             </div>
+
 
 
         </div>
