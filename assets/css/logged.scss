@@ -527,8 +527,11 @@ nav {
         width: 100%;
 
         select {
+          margin-top: 5px;
           width: 100%;
-          padding: 7px 12px;
+          padding: 10px 12px;
+          font-family: $font2;
+          font-size: 1rem;
         }
       }
     }
