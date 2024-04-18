@@ -116,6 +116,7 @@
   .rules {
     min-height: 0;
     padding: 40px;
+    gap: 0;
 
     img {
       display: none;
@@ -148,7 +149,7 @@
       justify-content: center;
 
       img {
-        width: 400px;
+        width: 335px;
       }
       p {
         margin-bottom: 20px;
@@ -156,6 +157,47 @@
       h2 {
         margin-bottom: 8px;
       }
+    }
+  }
+
+  .all-faqs {
+    .single-faq {
+      height: 50px;
+      .faq-ques {
+        height: 50px;
+        font-size: 1rem;
+
+        span {
+          font-size: 1.2rem;
+        }
+      }
+      .faq-ans {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .auth-box {
+    form {
+      .formGroup {
+        padding: 15px 10px;
+
+        input {
+          font-size: 0.9rem;
+          &:focus,
+          &:valid {
+            & + label {
+              top: 10px;
+            }
+          }
+        }
+      }
+    }
+    .links {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 18px;
+      font-size: 0.9rem;
     }
   }
 }

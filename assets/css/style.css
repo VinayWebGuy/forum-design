@@ -360,8 +360,7 @@ section .section-info h2 {
   filter: drop-shadow(5px 7px 5px #d22e22);
 }
 .auth-box form h2 {
-  -webkit-text-emphasis: ce;
-          text-emphasis: ce;
+  text-align: center;
   font-family: "Inter tight", sans-serif;
   margin-bottom: 20px;
 }
